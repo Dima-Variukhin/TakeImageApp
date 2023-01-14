@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_item_margin">12dp</dimen>
+    <dimen name="text_input_layout_vertical_margin">20dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+</resources>

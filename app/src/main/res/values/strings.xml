@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TakeImageApp</string>
+    <string name="text_input_hint">sci-fi</string>
+    <string name="get_random_image">random image</string>
 </resources>
