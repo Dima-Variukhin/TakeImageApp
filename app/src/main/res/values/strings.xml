@@ -2,4 +2,6 @@
     <string name="app_name">TakeImageApp</string>
     <string name="text_input_hint">sci-fi</string>
     <string name="get_random_image">random image</string>
+    <string name="no_connection_string">No internet connection!</string>
+    <string name="service_unavailable">Sorry currently service is unavailable</string>
 </resources>
