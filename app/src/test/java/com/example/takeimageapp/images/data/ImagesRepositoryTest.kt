@@ -8,7 +8,7 @@ import org.junit.Before
 import org.junit.Test
 import java.net.UnknownHostException
 
-internal class ImagesRepositoryTest {
+class ImagesRepositoryTest {
 
     private lateinit var testImagesCloudDataSource: TestImagesCloudDataSource
     private lateinit var repository: ImagesRepository
