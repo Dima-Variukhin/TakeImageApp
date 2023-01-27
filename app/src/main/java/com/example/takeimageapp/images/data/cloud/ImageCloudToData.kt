@@ -6,7 +6,7 @@ interface ImageCloudToData {
 
     fun saveId(id: String)
     fun saveDescription(description: String)
-    fun saveFull(full: String)
+    fun saveImagesList(imagesList: List<String>)
     fun saveName(name: String)
 
     fun makeData(): ImageData
@@ -14,7 +14,7 @@ interface ImageCloudToData {
     class Base : ImageCloudToData {
         private var id: String = ""
         private var description: String = ""
-        private var full: String = ""
+        private var imagesList: List<String> = emptyList()
         private var name: String = ""
 
         override fun saveId(id: String) {
@@ -25,14 +25,14 @@ interface ImageCloudToData {
             this.description = description
         }
 
-        override fun saveFull(full: String) {
-            this.full = full
+        override fun saveImagesList(imagesList: List<String>) {
+            this.imagesList = imagesList
         }
 
         override fun saveName(name: String) {
             this.name = name
         }
 
-        override fun makeData() = ImageData(id, description, full, name)
+        override fun makeData() = ImageData(id, description, imagesList, name)
     }
 }

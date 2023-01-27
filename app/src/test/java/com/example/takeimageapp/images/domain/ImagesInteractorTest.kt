@@ -8,7 +8,6 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
 
-
 internal class ImagesInteractorTest {
 
     private lateinit var imagesInteractor: ImagesInteractor
@@ -32,13 +31,7 @@ internal class ImagesInteractorTest {
         repository.changeIsErrorExpected(false)
         repository.changeExpectedList(TestData().imageDomainList)
 
-        val expected = ImagesDomain.Success(
-            listOf(
-                ImageDomain("1", "description1", "uri1", "name1"),
-                ImageDomain("2", "description2", "uri2", "name2"),
-                ImageDomain("3", "description3", "uri3", "name3")
-            )
-        )
+        val expected = ImagesDomain.Success(TestData().imageDomainList)
         val actual = imagesInteractor.fetchImages("sci-fi", 0)
 
         assertEquals(expected, actual)

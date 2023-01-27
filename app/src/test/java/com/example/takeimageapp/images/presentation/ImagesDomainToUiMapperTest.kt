@@ -1,6 +1,6 @@
 package com.example.takeimageapp.images.presentation
 
-import com.example.takeimageapp.images.domain.ImageDomain
+import com.example.takeimageapp.images.data.TestData
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertFalse
 import junit.framework.TestCase.assertTrue
@@ -30,7 +30,7 @@ class ImagesDomainToUiMapperTest {
 
     @Test
     fun success_with_list() {
-        imagesDomainToUiMapper.map(listOf(ImageDomain("1", "description1", "image1", "name1")))
+        imagesDomainToUiMapper.map(listOf(TestData().imageDomainList[0]))
 
         assertFalse(communications.imagesList.isEmpty())
         assertEquals(1, communications.showListCalled)

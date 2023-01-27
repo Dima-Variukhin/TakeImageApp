@@ -3,7 +3,7 @@ package com.example.takeimageapp.images.domain
 data class ImageDomain(
     private val id: String,
     private val description: String,
-    private val full: String,
+    private val imagesList: List<String>,
     private val name: String,
 ) {
 
@@ -11,10 +11,10 @@ data class ImageDomain(
         fun map(
             id: String,
             description: String,
-            full: String,
+            imagesList: List<String>,
             name: String,
         ): T
     }
 
-    fun <T> map(mapper: Mapper<T>): T = mapper.map(id, description, full, name)
+    fun <T> map(mapper: Mapper<T>): T = mapper.map(id, description, imagesList, name)
 }
