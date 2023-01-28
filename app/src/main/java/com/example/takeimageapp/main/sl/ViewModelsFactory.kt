@@ -9,5 +9,5 @@ class ViewModelsFactory(
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T =
-        dependencyContainer.module(modelClass) as T
+        dependencyContainer.module(modelClass).viewModel() as T
 }

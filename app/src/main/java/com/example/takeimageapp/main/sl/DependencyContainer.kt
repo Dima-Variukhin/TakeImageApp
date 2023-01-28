@@ -26,7 +26,7 @@ interface DependencyContainer {
         override fun provideImagesRepository() = repository
 
         override fun <T : ViewModel> module(clazz: Class<T>) = when (clazz) {
-            ImagesViewModel::class.java -> ImagesModule(core, this)
+            ImagesViewModel.Base::class.java -> ImagesModule(core, this)
             else -> {
                 dependencyContainer.module(clazz)
             }
