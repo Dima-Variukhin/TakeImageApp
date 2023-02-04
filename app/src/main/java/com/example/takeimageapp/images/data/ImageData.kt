@@ -3,7 +3,7 @@ package com.example.takeimageapp.images.data
 data class ImageData(
     private val id: String,
     private val description: String,
-    private val imagesList: List<String>,
+    private val imageTypes: List<String>,
     private val name: String,
 ) {
 
@@ -11,10 +11,10 @@ data class ImageData(
         fun map(
             id: String,
             description: String,
-            imagesList: List<String>,
+            imageTypes: List<String>,
             name: String,
         ): T
     }
 
-    fun <T> map(mapper: Mapper<T>): T = mapper.map(id, description, imagesList, name)
+    fun <T> map(mapper: Mapper<T>): T = mapper.map(id, description, imageTypes, name)
 }

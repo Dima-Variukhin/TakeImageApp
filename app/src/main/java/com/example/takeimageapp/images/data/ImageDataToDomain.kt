@@ -6,9 +6,9 @@ class ImageDataToDomain : ImageData.Mapper<ImageDomain> {
     override fun map(
         id: String,
         description: String,
-        imagesList: List<String>,
+        imageTypes: List<String>,
         name: String
     ): ImageDomain {
-        return ImageDomain(id, description, imagesList, name)
+        return ImageDomain(id, description, imageTypes, name)
     }
 }

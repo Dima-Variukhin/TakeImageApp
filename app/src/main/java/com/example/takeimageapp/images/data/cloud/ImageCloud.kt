@@ -38,7 +38,7 @@ data class ImageUrlsCloud(
     private val thumb: String,
 ) : ReceiveMapper {
     override fun accept(mapper: ImageCloudToData) {
-        mapper.saveImagesList(listOf(raw, full, regular, small))
+        mapper.saveImageTypes(listOf(raw, full, regular, small))
     }
 }
 

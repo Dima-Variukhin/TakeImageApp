@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity(), ProvideViewModel {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.container, ImagesFragment())
+            .replace(R.id.container, ImagesFragment())
             .commit()
     }
 

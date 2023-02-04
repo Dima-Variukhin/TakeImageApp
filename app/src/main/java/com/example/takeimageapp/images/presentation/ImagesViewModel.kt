@@ -13,7 +13,7 @@ interface ImagesViewModel : ObserveImages {
     class Base(
         private val interactor: ImagesInteractor,
         private val handleUiRequest: HandleUiRequest,
-        private val imagesCommunication: ImagesCommunication
+        private val imagesCommunication: ImagesCommunication,
     ) : ViewModel(), ImagesViewModel {
 
         override fun fetchImages(query: String, page: Int) =

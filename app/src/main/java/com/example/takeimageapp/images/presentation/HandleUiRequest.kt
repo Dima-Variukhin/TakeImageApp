@@ -16,7 +16,7 @@ interface HandleUiRequest {
     class Base(
         private val dispatchers: DispatchersList,
         private val communication: ImagesCommunication,
-        private val imagesDomainMapper: ImagesDomain.Mapper<Unit>
+        private val imagesDomainMapper: ImagesDomain.Mapper<Unit>,
     ) : HandleUiRequest {
         override fun handle(
             coroutineScope: CoroutineScope,
