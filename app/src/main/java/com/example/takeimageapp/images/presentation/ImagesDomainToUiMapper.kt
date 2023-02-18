@@ -8,10 +8,11 @@ class ImagesDomainToUiMapper(
     private val mapper: ImageDomain.Mapper<ImageUi>
 ) : ImagesDomain.Mapper<Unit> {
     override fun map(list: List<ImageDomain>) {
-        if (list.isNotEmpty()) communications.showList(list.map { it.map(mapper) })
+        if (list.isNotEmpty())
+            communications.showList(list.map { it.map(mapper) })
+        communications.showState(UiState.Success)
     }
 
-    override fun map(errorMessage: String) {
-        //TODO add error handling
-    }
+    override fun map(errorMessage: String) =
+        communications.showState(UiState.ShowError(errorMessage))
 }

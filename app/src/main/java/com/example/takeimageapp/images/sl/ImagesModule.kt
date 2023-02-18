@@ -10,6 +10,7 @@ import com.example.takeimageapp.images.presentation.ImagesDomainToUiMapper
 import com.example.takeimageapp.images.presentation.ImagesViewModel
 import com.example.takeimageapp.images.presentation.ListCommunication
 import com.example.takeimageapp.images.presentation.ProgressCommunication
+import com.example.takeimageapp.images.presentation.UiStateCommunication
 import com.example.takeimageapp.main.sl.Core
 import com.example.takeimageapp.main.sl.Module
 
@@ -26,7 +27,8 @@ class ImagesModule(
 
         val imagesCommunication = ImagesCommunication.Base(
             ProgressCommunication.Base(),
-            ListCommunication.Base()
+            ListCommunication.Base(),
+            UiStateCommunication.Base()
         )
 
         return ImagesViewModel.Base(
@@ -35,7 +37,7 @@ class ImagesModule(
                 core.provideDispatchers(),
                 imagesCommunication,
                 ImagesDomainToUiMapper(imagesCommunication, ImageDomainToUiMapper())
-            ), imagesCommunication
+            ), imagesCommunication, core
         )
     }
 }
