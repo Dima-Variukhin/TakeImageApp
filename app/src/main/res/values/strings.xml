@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">TakeImageApp</string>
-    <string name="text_input_hint">sci-fi</string>
+    <string name="text_input_hint">For example: sci-fi</string>
     <string name="get_random_image">random image</string>
+    <string name="get_image">get image</string>
+    <string name="text_input_is_empty">Text input is empty!</string>
     <string name="no_connection_string">No internet connection!</string>
     <string name="service_unavailable">Sorry currently service is unavailable</string>
 </resources>
