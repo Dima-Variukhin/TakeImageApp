@@ -9,8 +9,6 @@ import org.junit.Test
 
 class ImagesDomainToUiMapperTest {
 
-    //TODO add test for error handling
-
     private lateinit var communications: ImagesCommunicationTest
     private lateinit var imagesDomainToUiMapper: ImagesDomainToUiMapper
 
@@ -21,11 +19,21 @@ class ImagesDomainToUiMapperTest {
     }
 
     @Test
+    fun test_error() {
+        imagesDomainToUiMapper.map("some error")
+
+        assertEquals(1, communications.stateList.size)
+        assertEquals(UiState.ShowError("some error"), communications.stateList[0])
+    }
+
+    @Test
     fun success_with_empty_list() {
         imagesDomainToUiMapper.map(emptyList())
 
         assertTrue(communications.imagesList.isEmpty())
         assertEquals(0, communications.showListCalled)
+        assertEquals(true, communications.stateList[0] is UiState.Success)
+        assertEquals(1, communications.stateList.size)
     }
 
     @Test
@@ -34,5 +42,7 @@ class ImagesDomainToUiMapperTest {
 
         assertFalse(communications.imagesList.isEmpty())
         assertEquals(1, communications.showListCalled)
+        assertEquals(true, communications.stateList[0] is UiState.Success)
+        assertEquals(1, communications.stateList.size)
     }
 }
